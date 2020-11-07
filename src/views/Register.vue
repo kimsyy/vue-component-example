@@ -19,17 +19,19 @@
     </div>
 
     <div>
-      <button @click="handleRegister">가입하기</button>
+      <common-button :type="'primary'" @click.native="handleRegister">가입하기</common-button>
     </div>
   </div>
 </template>
 
 <script>
 import CommonInput from '@/components/common/CommonInput.vue';
+import CommonButton from '@/components/common/CommonButton.vue';
 
 export default {
   components: {
-    CommonInput
+    CommonInput,
+    CommonButton,
   },
 
   data() {

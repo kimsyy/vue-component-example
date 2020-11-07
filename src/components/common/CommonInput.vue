@@ -99,12 +99,12 @@ export default {
 .wrap-input {
   position: relative;
   padding: 10px 55px 10px 10px;
-  border: 1px solid $basic-border-color;
+  border: 1px solid $basic-color;
   border-radius: 4px;
   transition: border-color .2s linear;
 
   &.onFocus {
-    border-color: #409eff;
+    border-color: $primary-color;
   }
 
   input {
