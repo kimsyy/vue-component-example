@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>회원가입</h1>
+    <h1 class='title'>회원가입</h1>
+
     <div>
       <common-input
         v-model="form.id"
@@ -47,3 +48,9 @@ export default {
   },
 }
 </script>
+
+<style scoped lang="scss">
+  .title {
+    @extend %title-comp;
+  }
+</style>

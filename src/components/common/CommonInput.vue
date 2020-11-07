@@ -99,7 +99,7 @@ export default {
 .wrap-input {
   position: relative;
   padding: 10px 55px 10px 10px;
-  border: 1px solid #dcdfe6;
+  border: 1px solid $basic-border-color;
   border-radius: 4px;
   transition: border-color .2s linear;
 
