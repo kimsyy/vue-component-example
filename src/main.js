@@ -4,6 +4,14 @@ import router from './router'
 import './styles/reset.scss';
 import './styles/base.scss';
 import './fontAwesomeIcon';
+import commonComponents from './components/common';
+
+/**
+ * global component 등록
+ */
+Object.keys(commonComponents).forEach((component) => {
+  Vue.component(component, commonComponents[component]);
+});
 
 Vue.config.productionTip = false;
 

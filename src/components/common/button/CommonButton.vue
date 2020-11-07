@@ -8,6 +8,8 @@
 
 <script>
 export default {
+	name: 'CommonButton',
+	
   props: {
     type: {
       type: String,
@@ -20,7 +22,7 @@ export default {
 <style scoped lang="scss">
 	.wrap-btn {
 		display: inline-block;
-		
+
 		.btn {
 			cursor: pointer;
 			min-width: 80px;

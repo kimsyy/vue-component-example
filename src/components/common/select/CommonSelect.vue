@@ -22,6 +22,8 @@
 
 <script>
 export default {
+	name: 'CommonSelect',
+	
   props: {
     placeholder: {
       type: String, 

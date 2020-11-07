@@ -29,7 +29,7 @@
         ></common-select-option>
       </common-select>
     </div>
-
+    
     <div>
       <common-button :type="'primary'" @click.native="handleRegister">가입하기</common-button>
     </div>
@@ -37,10 +37,6 @@
 </template>
 
 <script>
-import CommonInput from '@/components/common/input/CommonInput.vue';
-import CommonButton from '@/components/common/button/CommonButton.vue';
-import CommonSelect from '@/components/common/select/CommonSelect.vue';
-import CommonSelectOption from '@/components/common/select/CommonSelectOption.vue';
 
 const OPTIONS_YEAR = [{
   value: '',
@@ -55,13 +51,6 @@ const OPTIONS_YEAR = [{
 }];
 
 export default {
-  components: {
-    CommonInput,
-    CommonButton,
-    CommonSelect,
-    CommonSelectOption,
-  },
-
   data() {
     return {
       form: {
