@@ -114,6 +114,7 @@ export default {
     height: 20px;
     line-height: 20px;
     color:#606266;  
+    font-size: 14px;
     outline: none;
     border: none;
 
