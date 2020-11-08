@@ -3,6 +3,7 @@ import input from './input';
 import select from './select';
 import form from './form';
 import layout from './layout';
+import radio from './radio';
 
 export default {
   ...button,
@@ -10,4 +11,5 @@ export default {
   ...select,
   ...form,
   ...layout,
+  ...radio,
 }

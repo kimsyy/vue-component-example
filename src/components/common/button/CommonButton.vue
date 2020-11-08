@@ -1,6 +1,6 @@
 <template>
 	<div :class="[`${type}`, 'wrap-btn']">
-		<button class="btn">
+		<button class="btn" type="button">
 			<slot></slot>	
 		</button>
 	</div>

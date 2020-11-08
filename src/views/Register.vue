@@ -25,6 +25,13 @@
             ></common-input>
           </common-form-item>
 
+          <common-form-item :label="'성별'">
+            <common-radio-group v-model="form.sex" :name="'sex'">
+              <common-radio :value="'man'">남</common-radio>
+              <common-radio :value="'woman'">녀</common-radio>
+            </common-radio-group>
+          </common-form-item>
+
           <common-form-item :label="'생일'">
             <common-select
               style="width:100px"
@@ -71,7 +78,7 @@
           </common-form-item>
 
 
-          <common-form-item :label="'전화'">
+          <common-form-item :label="'전화'" style="margin-bottom:0">
             <common-select
               v-model="form.phone"
             >
@@ -89,7 +96,7 @@
               v-model="form.phoneNum"
             ></common-input>
 
-            <common-button style="margin-left:5px" @click.native="handleRegister">인증</common-button>
+            <common-button style="margin-left:5px">인증</common-button>
           </common-form-item>
         </common-form>
       </common-col>
@@ -107,6 +114,19 @@
     <common-row :justify="'center'">
       <common-col>
         <common-button :type="'primary'" @click.native="handleRegister">가입하기</common-button>
+      </common-col>
+    </common-row>
+
+    <common-row>
+      <common-col>
+        <ul>
+          <li v-for="(item, name) in form" :key="`${item}-${name}`">
+            {{name}} : {{form[name]}}
+          </li>
+        </ul>
+        <p>
+          agree : {{agree}}
+        </p>
       </common-col>
     </common-row>
   </div>
@@ -169,6 +189,7 @@ export default {
         day: '',
         phone: '010',
         phoneNum: '',
+        sex: 'man',
       },
 
       agree: false,
@@ -182,8 +203,7 @@ export default {
 
   methods: {
     handleRegister() {
-      console.log(this.form)
-      console.log(this.agree)
+      alert('가입완료');
     }
   },
 }
