@@ -1,19 +1,30 @@
-# comp
+# vue로 만든 UI COMPONENT
 
-## Project setup
+## 프로젝트 준비
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 테스트 실행
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### UI 콤포넌트
+* button
+  * CommonButton
+  * CommonSwitchButton
+* form
+  * CommonForm
+  * CommonFormItem
+* input
+  * CommonInput
+* layout
+  * CommonCol
+  * CommonRow
+* radio
+  * CommonRadio
+  * CommonRadioGroup
+* select
+  * CommonSelect
+  * CommonSelectOption
