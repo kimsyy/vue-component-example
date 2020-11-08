@@ -131,6 +131,7 @@ export default {
 	}
 
 	.select-layer {
+		z-index: 300;
 		display: none;
 		box-sizing: border-box;
 		position: absolute;

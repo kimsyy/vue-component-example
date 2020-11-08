@@ -7,78 +7,94 @@
       </common-col>
     </common-row>
     
-    <div>
-      <common-form :label-width="80">
-        <common-form-item :label="'아이디'">
-          <common-input
-            v-model="form.id"
-            :placeholder="'아이디'"
-            :autoFocus="true"
-          ></common-input>
-        </common-form-item>
+    <common-row style="margin-bottom:0" :justify="'center'">
+      <common-col>
+        <common-form :label-width="80">
+          <common-form-item :label="'아이디'">
+            <common-input
+              v-model="form.id"
+              :placeholder="'아이디'"
+              :autoFocus="true"
+            ></common-input>
+          </common-form-item>
 
-        <common-form-item :label="'비밀번호'">
-          <common-input
-            v-model="form.password"
-            :type="'password'"
-            :placeholder="'비밀번호'"
-          ></common-input>
-        </common-form-item>
+          <common-form-item :label="'비밀번호'">
+            <common-input
+              v-model="form.password"
+              :type="'password'"
+              :placeholder="'비밀번호'"
+            ></common-input>
+          </common-form-item>
 
-        <common-form-item :label="'생일'">
-          <common-row style="margin-bottom:0">
-            <common-col>
-              <common-select
-                style="width:100px"
-                v-model="form.year"
-                :placeholder="'년'"
+          <common-form-item :label="'생일'">
+            <common-select
+              style="width:100px"
+              v-model="form.year"
+              :placeholder="'년'"
+            >
+              <common-select-option
+                v-for="(option, index) in optionsYear"
+                :key="`${option.value}-${index}`"
+                :label="option.label"
+                :value="option.value">
+              ></common-select-option
               >
-                <common-select-option
-                  v-for="(option, index) in optionsYear"
-                  :key="`${option.value}-${index}`"
-                  :label="option.label"
-                  :value="option.value">
-                ></common-select-option
-                >
-              </common-select>
-            </common-col>
+            </common-select>
 
-            <common-col>
-              <common-select
-                style="margin-left:10px"
-                v-model="form.month"
-                :placeholder="'월'"
+
+            <common-select
+              style="margin-left:5px"
+              v-model="form.month"
+              :placeholder="'월'"
+            >
+              <common-select-option
+                v-for="(option, index) in optionsMonth"
+                :key="`${option.value}-${index}`"
+                :label="option.label"
+                :value="option.value">
+              ></common-select-option
               >
-                <common-select-option
-                  v-for="(option, index) in optionsMonth"
-                  :key="`${option.value}-${index}`"
-                  :label="option.label"
-                  :value="option.value">
-                ></common-select-option
-                >
-              </common-select>
-            </common-col>
+            </common-select>
 
-            <common-col>
-              <common-select
-                style="margin-left:10px"
-                v-model="form.day"
-                :placeholder="'일'"
+            <common-select
+              style="margin-left:5px"
+              v-model="form.day"
+              :placeholder="'일'"
+            >
+              <common-select-option
+                v-for="(option, index) in optionsDay"
+                :key="`${option.value}-${index}`"
+                :label="option.label"
+                :value="option.value">
+              ></common-select-option
               >
-                <common-select-option
-                  v-for="(option, index) in optionsDay"
-                  :key="`${option.value}-${index}`"
-                  :label="option.label"
-                  :value="option.value">
-                ></common-select-option
-                >
-              </common-select>
-            </common-col>
-          </common-row>
+            </common-select>
+          </common-form-item>
 
-        </common-form-item>
-      </common-form>
-    </div>
+
+          <common-form-item :label="'전화'">
+            <common-select
+              v-model="form.phone"
+            >
+              <common-select-option
+                v-for="(option, index) in optionsPhone"
+                :key="`${option.value}-${index}`"
+                :label="option.label"
+                :value="option.value">
+              ></common-select-option
+              >
+            </common-select>
+
+            <common-input
+              style="width:50px;margin-left:5px"
+              v-model="form.phoneNum"
+            ></common-input>
+
+            <common-button style="margin-left:5px" @click.native="handleRegister">인증</common-button>
+          </common-form-item>
+        </common-form>
+      </common-col>
+    </common-row>
 
     <common-row :justify="'center'">
       <common-col>
@@ -126,6 +142,14 @@ const OPTIONS_DAY = [{
   label: '2'
 }];
 
+const OPTIONS_PHONE = [{
+  value: '010',
+  label: '010'
+}, {
+  value: '011',
+  label: '011'
+}];
+
 export default {
   data() {
     return {
@@ -135,11 +159,14 @@ export default {
         year: '',
         month: '',
         day: '',
+        phone: '010',
+        phoneNum: '',
       },
 
       optionsYear: OPTIONS_YEAR,
       optionsMonth: OPTIONS_MONTH,
       optionsDay: OPTIONS_DAY,
+      optionsPhone: OPTIONS_PHONE,
     }
   },
 

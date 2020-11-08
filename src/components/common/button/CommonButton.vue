@@ -26,7 +26,6 @@ export default {
 		.btn {
 			opacity: 1;
 			cursor: pointer;
-			min-width: 80px;
 			padding: 10px;
 			font-weight: 500;
 			border: 1px solid $basic-color;

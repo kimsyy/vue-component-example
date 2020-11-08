@@ -97,6 +97,7 @@ export default {
 
 <style scoped lang="scss">
 .wrap-input {
+  display: inline-block;
   position: relative;
   padding: 10px 55px 10px 10px;
   border: 1px solid $basic-color;
