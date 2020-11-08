@@ -1,5 +1,6 @@
 <template>
   <div
+	ref="test"
 		:style="{ minWidth: wrapWidth + 'px' }"
 		class="wrap-select" 
 		:class="{ onFocus: isFocus }"
@@ -12,7 +13,7 @@
 			</span>
 		</div>
 
-		<div class="layer" :style="{ minWidth: wrapWidth + 'px' }" v-show="isFocus">
+		<div class="select-layer" :style="{ minWidth: wrapWidth + 'px' }">
 			<ul>
 				<slot></slot>
 			</ul>
@@ -57,12 +58,21 @@ export default {
 	
 	methods: {
 		handleClickSelect() {
+			const elWrapSelects = document.querySelectorAll('.wrap-select');
+
+			elWrapSelects.forEach(el => {
+				el.classList.remove('onFocus');
+			});
+
 			this.isFocus = !this.isFocus;
 		},
 
 		updateValue(value) {
 			this.selectVal = value;
 		}
+	},
+
+	created() {
 	},
 }
 </script>
@@ -79,6 +89,10 @@ export default {
 			.icon-arrow {
 				transform: rotate(180deg);
 			}
+		}
+
+		.select-layer {
+			display: block;
 		}
 	}
 
@@ -116,7 +130,8 @@ export default {
 		}
 	}
 
-	.layer {
+	.select-layer {
+		display: none;
 		box-sizing: border-box;
 		position: absolute;
 		top: calc(100% + 5px);

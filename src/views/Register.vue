@@ -28,6 +28,18 @@
           :value="option.value">
         ></common-select-option>
       </common-select>
+
+            <common-select
+        v-model="form.year"
+        :placeholder="'년'"
+      >
+        <common-select-option
+          v-for="(option, index) in optionsYear"
+          :key="`${option.value}-${index}`"
+          :label="option.label"
+          :value="option.value">
+        ></common-select-option>
+      </common-select>
     </div>
     
     <div>

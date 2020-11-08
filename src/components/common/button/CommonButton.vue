@@ -1,21 +1,21 @@
 <template>
-  <div :class="[`${type}`, 'wrap-btn']">
+	<div :class="[`${type}`, 'wrap-btn']">
 		<button class="btn">
-			<slot></slot>
+			<slot></slot>	
 		</button>
-  </div>
+	</div>
 </template>
 
 <script>
 export default {
 	name: 'CommonButton',
-	
-  props: {
-    type: {
-      type: String,
-      default: 'basic', // 'basic' || 'primary'
-    }  
-  },
+
+	props: {
+		type: {
+			type: String,
+			default: 'basic', // 'basic' || 'primary'
+		}  
+	},
 }
 </script>
 
