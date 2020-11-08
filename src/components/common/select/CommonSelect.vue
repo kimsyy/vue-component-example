@@ -52,7 +52,7 @@ export default {
   data() {
     return {
 			isFocus: false,
-			wrapWidth: 150,
+			wrapWidth: 50,
     }
 	},
 	

@@ -24,18 +24,15 @@ export default {
 		display: inline-block;
 
 		.btn {
+			opacity: 1;
 			cursor: pointer;
 			min-width: 80px;
 			padding: 10px;
+			font-weight: 500;
 			border: 1px solid $basic-color;
 			border-radius: 4px;
 			outline: none;
-			transition: all .1s linear;
-			opacity: 1;
-
-			&:hover {
-				opacity: .7;
-			}
+			transition: opacity .1s linear;
 		}
 
 		&.basic {
@@ -43,12 +40,6 @@ export default {
 				color: #666;
 				border-color: $basic-color;
 				background-color: #fff;
-
-				&:hover {
-					color: #fff;
-					border-color: $primary-color;
-					background-color: $primary-color;
-				}
 			}
 		}
 
@@ -57,12 +48,6 @@ export default {
 				color: #fff;
 				border-color: $primary-color;
 				background-color: $primary-color;
-
-				&:hover {
-					color: #666;
-					border-color: $basic-color;
-					background-color: #fff;
-				}
 			}
 		}
 	}

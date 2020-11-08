@@ -1,14 +1,14 @@
 <template>
   <div>
 
-    <common-row>
+    <common-row style="margin-bottom:0">
       <common-col :span="1">
         <h1 class='title'>회원가입</h1>
       </common-col>
     </common-row>
     
     <div>
-      <common-form :label-width="100">
+      <common-form :label-width="80">
         <common-form-item :label="'아이디'">
           <common-input
             v-model="form.id"
@@ -26,10 +26,10 @@
         </common-form-item>
 
         <common-form-item :label="'생일'">
-
-          <common-row>
-            <common-col :span="1">
+          <common-row style="margin-bottom:0">
+            <common-col>
               <common-select
+                style="width:100px"
                 v-model="form.year"
                 :placeholder="'년'"
               >
@@ -43,13 +43,14 @@
               </common-select>
             </common-col>
 
-            <common-col :span="1">
+            <common-col>
               <common-select
+                style="margin-left:10px"
                 v-model="form.month"
                 :placeholder="'월'"
               >
                 <common-select-option
-                  v-for="(option, index) in optionsYear"
+                  v-for="(option, index) in optionsMonth"
                   :key="`${option.value}-${index}`"
                   :label="option.label"
                   :value="option.value">
@@ -58,13 +59,14 @@
               </common-select>
             </common-col>
 
-            <common-col :span="1">
+            <common-col>
               <common-select
+                style="margin-left:10px"
                 v-model="form.day"
                 :placeholder="'일'"
               >
                 <common-select-option
-                  v-for="(option, index) in optionsYear"
+                  v-for="(option, index) in optionsDay"
                   :key="`${option.value}-${index}`"
                   :label="option.label"
                   :value="option.value">
@@ -118,9 +120,9 @@ const OPTIONS_DAY = [{
 },
   {
   value: '1',
-  label: '2'
+  label: '1'
 }, {
-  value: '2001',
+  value: '2',
   label: '2'
 }];
 
@@ -136,7 +138,7 @@ export default {
       },
 
       optionsYear: OPTIONS_YEAR,
-      optionsMoth: OPTIONS_MONTH,
+      optionsMonth: OPTIONS_MONTH,
       optionsDay: OPTIONS_DAY,
     }
   },
