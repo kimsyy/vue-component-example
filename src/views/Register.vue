@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <common-row style="margin-bottom:0">
       <common-col :span="1">
         <h1 class='title'>회원가입</h1>
@@ -96,6 +95,15 @@
       </common-col>
     </common-row>
 
+    <common-row :justify="'center'" :align="'center'" style="margin: 0 20px 20px 20px">
+      <common-col :span="1">
+        모든 약관 내용에 동의합니다.
+      </common-col>
+      <common-col :span="1" style="text-align:right">
+        <common-switch-button v-model="agree"></common-switch-button>
+      </common-col>
+    </common-row>
+
     <common-row :justify="'center'">
       <common-col>
         <common-button :type="'primary'" @click.native="handleRegister">가입하기</common-button>
@@ -163,6 +171,8 @@ export default {
         phoneNum: '',
       },
 
+      agree: false,
+
       optionsYear: OPTIONS_YEAR,
       optionsMonth: OPTIONS_MONTH,
       optionsDay: OPTIONS_DAY,
@@ -173,6 +183,7 @@ export default {
   methods: {
     handleRegister() {
       console.log(this.form)
+      console.log(this.agree)
     }
   },
 }

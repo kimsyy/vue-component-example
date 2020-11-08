@@ -1,5 +1,5 @@
 <template>
-  <div class="common-row" :style="{ justifyContent: this.justify }">
+  <div class="common-row" :style="{ justifyContent: this.justify, alignItems: this.align }">
     <slot></slot>
   </div>
 </template>
@@ -10,6 +10,11 @@ export default {
   
   props: {
     justify: {
+      type: String,
+      default: '',
+    },
+
+    align: {
       type: String,
       default: '',
     }
